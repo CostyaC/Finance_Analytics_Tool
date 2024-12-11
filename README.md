@@ -83,15 +83,20 @@ Performativ-Tech-Challenge/
 
 ### Key Folders : 
 
-src/Task/: Contains the core implementation classes for the project:
+- **src/Task/**: Contains the core implementation classes for the project:  
+  - `MetricsCalculator.java`: The main calculator class.  
+  - `MetricsCalculatorTest.java`: The test class to validate functionality.  
+  - `FxRates.java`: Handles currency conversion and API interaction.  
+  - `Position.java`: Represents a financial position.  
 
-MetricsCalculator.java: The main calculator class.
-MetricsCalculatorTest.java: The test class to validate functionality.
-FxRates.java: Handles currency conversion and API interaction.
-Position.java: Represents a financial position.
-src/Test_API/: Contains:
+- **src/Test_API/**: Contains:  
+  - `APITest.java`: A class to validate API functionality.  
 
-APITest.java: A class to validate API functionality.
-Supportive Files/: Includes required dependencies and the JSON input file.
+- **Supportive Files/**: Includes required dependencies and the JSON input file:  
+  - `jackson-annotations-2.15.2.jar`: Dependency for JSON handling.  
+  - `jackson-core-2.15.2.jar`: Dependency for JSON processing.  
+  - `jackson-databind-2.15.2.jar`: Dependency for JSON binding.  
+  - `tech-challenge-2024-positions.json`: The JSON input file required for the project.  
+
 
 
