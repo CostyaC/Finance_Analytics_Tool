@@ -60,4 +60,38 @@ The project relies on a JSON file containing position data. You must ensure that
 ``` 
 ### 7) Save All the changes and run the project
 
+### Project Structure:
+
+The Project is structured as follows:
+
+Performativ-Tech-Challenge/
+├── src/
+│   ├── Task/
+│   │   ├── MetricsCalculator.java
+│   │   ├── MetricsCalculatorTest.java
+│   │   ├── FxRates.java
+│   │   ├── Position.java
+│   ├── Test_API/
+│   │   ├── APITest.java
+├── Supportive Files/
+│   ├── jackson-annotations-2.15.2.jar
+│   ├── jackson-core-2.15.2.jar
+│   ├── jackson-databind-2.15.2.jar
+│   ├── tech-challenge-2024-positions.json
+├── README.md
+
+
+### Key Folders : 
+
+src/Task/: Contains the core implementation classes for the project:
+
+MetricsCalculator.java: The main calculator class.
+MetricsCalculatorTest.java: The test class to validate functionality.
+FxRates.java: Handles currency conversion and API interaction.
+Position.java: Represents a financial position.
+src/Test_API/: Contains:
+
+APITest.java: A class to validate API functionality.
+Supportive Files/: Includes required dependencies and the JSON input file.
+
 
