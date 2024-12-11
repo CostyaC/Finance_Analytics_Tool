@@ -53,9 +53,9 @@ The project relies on a JSON file containing position data. You must ensure that
 
 ### 6) Replace the existing path with the one corresponding to your system, for example : 
 
-`String filePath = "YourSystemPath/tech-challenge-2024-positions.json";`
+ ```java  
 
-### 7) Save the changes and Run the project.
+`String filePath = "YourSystemPath/tech-challenge-2024-positions.json"; 
 
 
 
