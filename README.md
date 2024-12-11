@@ -1,2 +1,4 @@
 # Performativ-Tech-Challenge
-Assignment-Tasks
+Financial Metrics Calculator System 
+
+Guide to Setup the Project:
