@@ -50,3 +50,12 @@ The project relies on a JSON file containing position data. You must ensure that
 4. Find the line containing the `filePath` variable:  
    ```java  
    String filePath = "C:/Users/koste/Desktop/My FolderS/JobFolder/IT JobS/PerFormatiV-Job/tech-challenge-2024-positions.json";  
+
+### 6) Replace the existing path with the one corresponding to your system, for example : 
+
+`String filePath = "YourSystemPath/tech-challenge-2024-positions.json";`
+
+### 7) Save the changes and Run the project.
+
+
+
