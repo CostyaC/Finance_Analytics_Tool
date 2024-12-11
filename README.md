@@ -56,6 +56,3 @@ The project relies on a JSON file containing position data. You must ensure that
  ```java  
 
 `String filePath = "YourSystemPath/tech-challenge-2024-positions.json"; 
-
-
-
