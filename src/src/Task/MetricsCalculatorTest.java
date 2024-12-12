@@ -286,11 +286,23 @@ public class MetricsCalculatorTest {
     	  System.out.println("\nFailed to parse positions for testing");
     	  
       }
-    
-    
-    
-    
-    
-    }
+
+
+///////////////////=============== Testing the Submission Method ==================/////////////////////////////////////
+      
+      System.out.println("\nTesting the Submission Method :");
+      
+      try {
+    	  
+    	  NewCalculator.submitResults(positions_test, targetCurrency_Test, startDate_Test, endDate_Test);
+    	  
+    	  
+      }   catch(Exception e) {
+    	  
+    	  System.out.println("\nError during submission test : "+e.getMessage());
+    	  
+      }
+ 
+	}
 	
 }
