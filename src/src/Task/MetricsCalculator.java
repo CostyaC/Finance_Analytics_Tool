@@ -258,5 +258,95 @@ public Map<String,Double> calculateMetrics(List<Position>positions,String target
   
   }
 
+	////////////////////////////////////////// =========== SubMission Part ============== /////////////////////////////////////////////////
+
+
+private String convertMetricsToJSON(Map<String,Double>metricsSummary) {
+	
+	JSONObject jsonObject = new JSONObject();
+	
+	for (Map.Entry<String, Double> entry : metricsSummary.entrySet()) {
+		
+		jsonObject.put(entry.getKey(), entry.getValue());
+		
+	}
+	
+	return jsonObject.toString();
+}
+
+
+public void submitResults(List<Position>positions,String targetCurrency,LocalDate startDate,LocalDate endDate) {
+	
+	
+	Map<String, Double> metricsSummary = calculateMetrics(positions,targetCurrency,startDate,endDate);
+	String metricsJSON = convertMetricsToJSON(metricsSummary);
+	
+	
+	System.out.println("JSON Payload : "+metricsJSON);
+	
+	
+	  try {
+		  
+		 URL url = new URL("https://api.challenges.performativ.com/submit");
+		 
+		 
+		 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		 
+		 connection.setRequestMethod("POST");
+		 connection.setRequestProperty("Content-Type","application/json");
+		 connection.setRequestProperty("x-api-key","FSPkaSbQA55Do0nXhSZkH9eKWVlAMmNP7OKlI2oA");
+		 connection.setDoOutput(true);
+		 
+		     
+		       try(OutputStream os = connection.getOutputStream()) {
+		    	   
+		    	   byte[] input = metricsJSON.getBytes("utf-8");
+		    	   
+		    	   os.write(input, 0, input.length);
+		    	   
+		    	   }
+		       
+		       
+		       
+		  int responseCode = connection.getResponseCode();
+		  System.out.println("Response Code : "+responseCode);
+		  
+		  if(responseCode == 200) {
+			  
+			  try(BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream(),"utf-8"))){
+				  
+				  StringBuilder response = new StringBuilder();
+				  
+				  String responseLine;
+				  
+				      while((responseLine = br.readLine()) != null) {
+				    	  
+				    	  response.append(responseLine.trim());
+				    	  
+				    	 } 
+				      
+				      System.out.println("Response :"+response.toString());
+				  
+			  }
+			  
+			  
+			  
+		  } else {
+			  
+			  System.out.println("Failed to submit : "+responseCode);
+			  
+		  }
+		  
+		  
+		  
+		  
+	  }  catch(Exception e) {
+		  
+		  System.out.println("Error during submission"+e.getMessage());
+		  e.printStackTrace();
+		  
+	  }
+	
+   }
 
 }
