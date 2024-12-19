@@ -1,4 +1,4 @@
-# Performativ-Tech-Challenge  
+# FinanceAnalyticsTool  
 **Financial Metrics Calculator System**  
 
 ---
